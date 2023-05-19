@@ -145,4 +145,4 @@ class Flake8TrioRunner_cst(__CommonRunner):
         # expose the noqa's parsed by the last visitor, so they can be used to filter
         # ast problems
         if not self.options.disable_noqa:
-            self.noqas = v.noqas  [reportUnboundVariable]
+            self.noqas = v.noqas[reportUnboundVariable]

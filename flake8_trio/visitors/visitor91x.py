@@ -216,7 +216,7 @@ class InsertCheckpointsInLoopBody(CommonVisitors):
         return updated_node
 
     # returns handled same as yield, but ofc needs to ignore types
-    leave_Return = leave_Yield  
+    leave_Return = leave_Yield
 
 
 @error_class_cst
@@ -394,7 +394,7 @@ class Visitor91X(Flake8TrioVisitor_cst, CommonVisitors):
 
     # raising exception means we don't need to checkpoint so we can treat it as one
     # can't use TypeVar due to libcst's built-in type checking not supporting it
-    leave_Raise = leave_Await  
+    leave_Raise = leave_Await
 
     # Async context managers can reasonably checkpoint on either or both of entry and
     # exit.  Given that we can't tell which, we assume "both" to avoid raising a
@@ -540,7 +540,7 @@ class Visitor91X(Flake8TrioVisitor_cst, CommonVisitors):
         _ = node.body.visit(self)
         self.leave_If_body(node)
         _ = node.orelse.visit(self)
-        self.leave_If(node, node)  
+        self.leave_If(node, node)
         return False  # libcst shouldn't visit subnodes again
 
     def visit_While(self, node: cst.While | cst.For):
@@ -680,7 +680,7 @@ class Visitor91X(Flake8TrioVisitor_cst, CommonVisitors):
                 self.loop_state.nodes_needing_checkpoints, self.library
             )
             # type of updated_node expanded to the return type
-            updated_node = updated_node.visit(transformer)  
+            updated_node = updated_node.visit(transformer)
 
         self.restore_state(original_node)
         # https://github.com/afonasev/flake8-return/issues/133

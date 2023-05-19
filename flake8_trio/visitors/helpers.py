@@ -45,10 +45,8 @@ def error_class_cst(error_class: type[T_CST]) -> type[T_CST]:
 
 
 def disabled_by_default(error_class: type[T_EITHER]) -> type[T_EITHER]:
-    assert error_class.error_codes  [attr-defined]
-    default_disabled_error_codes.extend(
-        error_class.error_codes  [attr-defined]
-    )
+    assert error_class.error_codes[attr - defined]
+    default_disabled_error_codes.extend(error_class.error_codes[attr - defined])
     return error_class
 
 
