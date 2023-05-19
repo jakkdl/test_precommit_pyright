@@ -32,7 +32,7 @@ class Statement(NamedTuple):
     def __eq__(self, other: Any) -> bool:
         return (
             isinstance(other, Statement)
-            and self[:2] == other[:2]  # type: ignore
+            and self[:2] == other[:2]  
             and (
                 self.col_offset == other.col_offset
                 or -1 in (self.col_offset, other.col_offset)

@@ -202,7 +202,7 @@ class Plugin:
             # Disable TRIO9xx calls by default
             option_manager.extend_default_ignore(default_disabled_error_codes)
             # add parameter to parse from flake8 config
-            add_argument = functools.partial(  # type: ignore
+            add_argument = functools.partial(  
                 option_manager.add_option, parse_from_config=True
             )
 
@@ -312,7 +312,7 @@ class Plugin:
         all_codes: set[str] = {
             err_code
             for err_class in (*ERROR_CLASSES, *ERROR_CLASSES_CST)
-            for err_code in err_class.error_codes.keys()  # type: ignore[attr-defined]
+            for err_code in err_class.error_codes.keys()  [attr-defined]
             if len(err_code) == 7  # exclude e.g. TRIO103_anyio_trio
         }
 
