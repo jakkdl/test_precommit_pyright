@@ -38,7 +38,7 @@ repos:
       rev: v1.1.299
       hooks:
           - id: pyright
-            entry: env PYRIGHT_PYTHON_FORCE_VERSION=latest pyright
+            #entry: env PYRIGHT_PYTHON_FORCE_VERSION=latest pyright
             args: [--pythonversion=3.11, --warnings]
             additional_dependencies:
           # Required for pyright strict mode

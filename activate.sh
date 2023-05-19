@@ -14,6 +14,6 @@ alias htoxall='tox --develop -qp'
 
 
 alias hcheck='untracked && git add -u && pre-commit run --show-diff-on-failure'
-alias gfpush='untracked && pytest --quiet -x && git commit -a --amend --no-edit && git push --force-with-lease'
+alias gfpush='git commit -a --amend --no-edit && git push --force-with-lease'
 
 export LIBCST_PARSER_TYPE="native"
