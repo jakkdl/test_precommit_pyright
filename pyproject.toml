@@ -26,6 +26,7 @@ warn_unreachable = true
 warn_unused_ignores = false
 
 [tool.pyright]
+include = ["flake8_trio", "tests", "setup.py"]
 exclude = ["**/node_modules", "**/__pycache__", "**/.*", "tests/eval_files/*", "tests/autofix_files/*"]  # TODO: fix errors in eval/autofix files
 reportCallInDefaultInitializer = true
 reportImplicitStringConcatenation = false  # black generates implicit string concats
