@@ -1,0 +1,37 @@
+[tool.autoflake]
+exclude = ["tests/autofix_files/*.py", "tests/eval_files/*.py"]
+ignore-init-module-imports = true
+in-place = true
+quiet = true
+remove-all-unused-imports = true
+remove-duplicate-keys = true
+remove-unused-variables = true
+
+[tool.codespell]
+ignore-words-list = 'spawnve'
+
+[tool.isort]
+only_modified = true
+profile = "black"
+py_version = "311"
+quiet = true
+skip_gitignore = true
+skip_glob = "tests/eval_files/*"
+
+[tool.mypy]
+check_untyped_defs = true
+disable_error_code = ["no-untyped-def", "misc", "no-untyped-call", "no-any-return"]
+strict = true
+warn_unreachable = true
+warn_unused_ignores = false
+
+[tool.pyright]
+exclude = ["**/node_modules", "**/__pycache__", "**/.*", "tests/eval_files/*", "tests/autofix_files/*"]  # TODO: fix errors in eval/autofix files
+reportCallInDefaultInitializer = true
+reportImplicitStringConcatenation = false  # black generates implicit string concats
+reportMissingSuperCall = true
+reportPropertyTypeMismatch = true
+reportShadowedImports = true
+reportUninitializedInstanceVariable = true
+reportUnusedCallResult = false
+strict = ["*.py", "tests/*.py", "flake8_trio/**/*.py"]
