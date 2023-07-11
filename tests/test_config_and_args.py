@@ -157,13 +157,11 @@ def test_200_options(capsys: pytest.CaptureFixture[str]):
 
 
 def test_anyio_from_config(tmp_path: Path, capsys: pytest.CaptureFixture[str]):
-    assert tmp_path.joinpath(".flake8").write_text(
-        """
+    assert tmp_path.joinpath(".flake8").write_text("""
 [flake8]
 anyio = True
 select = TRIO220
-"""
-    )
+""")
 
     from flake8_trio.visitors.visitor2xx import Visitor22X
 
@@ -189,23 +187,19 @@ select = TRIO220
 
 
 def _test_trio200_from_config_common(tmp_path: Path) -> str:
-    assert tmp_path.joinpath(".flake8").write_text(
-        """
+    assert tmp_path.joinpath(".flake8").write_text("""
 [flake8]
 trio200-blocking-calls =
   other -> async,
   sync_fns.* -> the_async_equivalent,
 select = TRIO200
-"""
-    )
-    assert tmp_path.joinpath("example.py").write_text(
-        """
+""")
+    assert tmp_path.joinpath("example.py").write_text("""
 import sync_fns
 
 async def foo():
     sync_fns.takes_a_long_time()
-"""
-    )
+""")
     return (
         "./example.py:5:5: TRIO200 User-configured blocking sync call sync_fns.* "
         "in async function, consider replacing with the_async_equivalent.\n"
