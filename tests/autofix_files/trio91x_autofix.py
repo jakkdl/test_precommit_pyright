@@ -12,8 +12,7 @@ from typing import Any
 import trio
 
 
-def bar() -> Any:
-    ...
+def bar() -> Any: ...
 
 
 async def foo() -> Any:
@@ -111,8 +110,7 @@ async def foo_while_nested_func():
 # Code coverage: visitors run when inside a sync function that has an async function.
 # When sync funcs don't contain an async func the body is not visited.
 def sync_func():
-    async def async_func():
-        ...
+    async def async_func(): ...
 
     try:
         ...
