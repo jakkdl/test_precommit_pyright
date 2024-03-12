@@ -47,8 +47,7 @@ assert (
 ), f"no eval file for autofix file[s] {extra_autofix_files}"
 
 
-class ParseError(Exception):
-    ...
+class ParseError(Exception): ...
 
 
 # check for presence of _pyXX, skip if version is later, and prune parameter

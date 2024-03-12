@@ -13,8 +13,7 @@ async def foo() -> Any:
     await foo()
 
 
-def bar(*args) -> Any:
-    ...
+def bar(*args) -> Any: ...
 
 
 async def foo_yield_1():
@@ -548,8 +547,7 @@ def foo_sync_1():
     return
 
 
-def foo_sync_2():
-    ...
+def foo_sync_2(): ...
 
 
 def foo_sync_3():

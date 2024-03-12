@@ -8,34 +8,34 @@ ci:
 
 repos:
     - repo: https://github.com/psf/black
-      rev: 23.1.0
+      rev: 24.2.0
       hooks:
           - id: black
             args: [--preview]
 
     - repo: https://github.com/PyCQA/autoflake
-      rev: v2.0.2
+      rev: v2.3.0
       hooks:
           - id: autoflake
 
     - repo: https://github.com/asottile/pyupgrade
-      rev: v3.3.1
+      rev: v3.15.1
       hooks:
           - id: pyupgrade
             args: [--py39-plus]
 
     - repo: https://github.com/pycqa/isort
-      rev: 5.12.0
+      rev: 5.13.2
       hooks:
           - id: isort
 
     - repo: https://github.com/pre-commit/mirrors-mypy
-      rev: v1.1.1
+      rev: v1.9.0
       hooks:
           - id: mypy
 
     - repo: https://github.com/RobertCraigie/pyright-python
-      rev: v1.1.299
+      rev: v1.1.353
       hooks:
           - id: pyright
             entry: env PYRIGHT_PYTHON_FORCE_VERSION=latest pyright
@@ -51,14 +51,14 @@ repos:
                 - trio
 
     - repo: https://github.com/codespell-project/codespell
-      rev: v2.2.4
+      rev: v2.2.6
       hooks:
           - id: codespell
             additional_dependencies:
                 - tomli
 
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.4.0
+      rev: v4.5.0
       hooks:
           - id: check-merge-conflict
           - id: check-toml
@@ -72,7 +72,7 @@ repos:
             args: ['--markdown-linebreak-ext=md,markdown']
 
     - repo: https://github.com/PyCQA/flake8
-      rev: 6.0.0
+      rev: 7.0.0
       hooks:
           - id: flake8
             types_or: [python, pyi]
@@ -96,7 +96,7 @@ repos:
 # Pinned to flake8 5.0.4 since flake8-eradicate is not updated to work with flake8 6
 # https://github.com/wemake-services/flake8-eradicate/pull/271
     - repo: https://github.com/PyCQA/flake8
-      rev: 5.0.4
+      rev: 7.0.0
       hooks:
           - id: flake8
             name: flake8-eradicate
@@ -106,12 +106,12 @@ repos:
                 - flake8-eradicate
 
     - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: 0.2.2
+      rev: 0.2.3
       hooks:
           - id: yamlfmt
 
     - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-      rev: v2.8.0
+      rev: v2.12.0
       hooks:
           - id: pretty-format-toml
             args: [--autofix]

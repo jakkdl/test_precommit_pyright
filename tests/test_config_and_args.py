@@ -1,4 +1,5 @@
 """Various tests for testing argument and config parsing."""
+
 from __future__ import annotations
 
 import ast
@@ -365,8 +366,7 @@ def test_disable_noqa_cst(
     out, err = capsys.readouterr()
     assert not err
     assert (
-        out
-        == "./example.py:2:6: TRIO100 trio.move_on_after context contains no"
+        out == "./example.py:2:6: TRIO100 trio.move_on_after context contains no"
         " checkpoints, remove the context or add `await"
         " trio.lowlevel.checkpoint()`.\n"
     )
