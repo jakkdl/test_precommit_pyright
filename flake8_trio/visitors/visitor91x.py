@@ -114,12 +114,10 @@ class CommonVisitors(cst.CSTTransformer, ABC):
 
     @property
     @abstractmethod
-    def library(self) -> tuple[str, ...]:
-        ...
+    def library(self) -> tuple[str, ...]: ...
 
     @abstractmethod
-    def should_autofix(self, node: cst.CSTNode, code: str | None = None) -> bool:
-        ...
+    def should_autofix(self, node: cst.CSTNode, code: str | None = None) -> bool: ...
 
     # instead of trying to exclude yields found in all the weird places from
     # setting self.add_statement, we instead clear it upon each new line.

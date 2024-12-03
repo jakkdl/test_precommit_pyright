@@ -5,6 +5,7 @@ context does not contain any `await` statements.  This makes it pointless, as
 the timeout can only be triggered by a checkpoint.
 Checkpoints on Await, Async For and Async With
 """
+
 from __future__ import annotations
 
 from typing import Any

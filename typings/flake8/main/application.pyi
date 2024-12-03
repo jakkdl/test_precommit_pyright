@@ -13,18 +13,23 @@ class Application:
     def __init__(self) -> None:
         """Initialize our application."""
         ...
+
     def exit_code(self) -> int:
         """Return the program exit code."""
         ...
+
     def make_formatter(self) -> None:
         """Initialize a formatter based on the parsed options."""
         ...
+
     def make_guide(self) -> None:
         """Initialize our StyleGuide."""
         ...
+
     def make_file_checker_manager(self, argv: Sequence[str]) -> None:
         """Initialize our FileChecker Manager."""
         ...
+
     def run_checks(self) -> None:
         """Run the actual checks with the FileChecker Manager.
 
@@ -33,9 +38,11 @@ class Application:
         managing.
         """
         ...
+
     def report_benchmarks(self) -> None:
         """Aggregate, calculate, and report benchmarks for this run."""
         ...
+
     def report_errors(self) -> None:
         """Report all the errors found by flake8 3.0.
 
@@ -43,9 +50,11 @@ class Application:
         number of errors, warnings, and other messages found.
         """
         ...
+
     def report_statistics(self) -> None:
         """Aggregate and report statistics from this run."""
         ...
+
     def initialize(self, argv: Sequence[str]) -> None:
         """Initialize the application to be run.
 
@@ -53,9 +62,11 @@ class Application:
         command-line arguments.
         """
         ...
+
     def report(self) -> None:
         """Report errors, statistics, and benchmarks."""
         ...
+
     def run(self, argv: Sequence[str]) -> None:
         """Run our application.
 
